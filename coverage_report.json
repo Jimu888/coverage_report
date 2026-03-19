@@ -1,0 +1,872 @@
+{
+  "runDir": "C:\\Users\\Administrator\\clawd\\binance-futures-analysis\\skill-runs\\20260319_232231",
+  "requestedLookbackDays": 90,
+  "ledgerCount": 11593,
+  "ledgerTimeRange": {
+    "minTimeUtc": "2025-12-19T16:00:00+00:00",
+    "maxTimeUtc": "2026-03-19T04:12:21+00:00"
+  },
+  "ledgerSymbols": [
+    "1000BONKUSDT",
+    "1000PEPEUSDT",
+    "BEATUSDT",
+    "BOMEUSDT",
+    "BREVUSDT",
+    "BROCCOLI714USDT",
+    "BROCCOLIF3BUSDT",
+    "BTCUSDT",
+    "CLOUSDT",
+    "DOGEUSDT",
+    "ETHUSDT",
+    "HYPEUSDT",
+    "KAITOUSDT",
+    "KITEUSDT",
+    "LIGHTUSDT",
+    "LITUSDT",
+    "MYXUSDT",
+    "PIPPINUSDT",
+    "POWERUSDT",
+    "RAVEUSDT",
+    "RIVERUSDT",
+    "ROBOUSDT",
+    "SOPHUSDT",
+    "UNIUSDT",
+    "VIRTUALUSDT",
+    "WLFIUSDT",
+    "XAGUSDT",
+    "XAUUSDT",
+    "ZBTUSDT"
+  ],
+  "ledgerSymbolsCount": 29,
+  "detail": {
+    "symbolsProcessed": 29,
+    "tradeSymbolsWithData": [
+      "1000BONKUSDT",
+      "1000PEPEUSDT",
+      "BEATUSDT",
+      "BOMEUSDT",
+      "BREVUSDT",
+      "BROCCOLI714USDT",
+      "BROCCOLIF3BUSDT",
+      "BTCUSDT",
+      "CLOUSDT",
+      "DOGEUSDT",
+      "ETHUSDT",
+      "HYPEUSDT",
+      "KAITOUSDT",
+      "KITEUSDT",
+      "LIGHTUSDT",
+      "LITUSDT",
+      "MYXUSDT",
+      "PIPPINUSDT",
+      "POWERUSDT",
+      "RAVEUSDT",
+      "RIVERUSDT",
+      "ROBOUSDT",
+      "SOPHUSDT",
+      "UNIUSDT",
+      "VIRTUALUSDT",
+      "WLFIUSDT",
+      "XAGUSDT",
+      "XAUUSDT",
+      "ZBTUSDT"
+    ],
+    "tradeSymbolsWithDataCount": 29,
+    "orderSymbolsWithData": [
+      "1000BONKUSDT",
+      "1000PEPEUSDT",
+      "BOMEUSDT",
+      "BREVUSDT",
+      "BROCCOLI714USDT",
+      "BROCCOLIF3BUSDT",
+      "BTCUSDT",
+      "CLOUSDT",
+      "DOGEUSDT",
+      "ETHUSDT",
+      "HYPEUSDT",
+      "KAITOUSDT",
+      "KITEUSDT",
+      "LIGHTUSDT",
+      "MYXUSDT",
+      "PIPPINUSDT",
+      "POWERUSDT",
+      "RIVERUSDT",
+      "ROBOUSDT",
+      "SOPHUSDT",
+      "UNIUSDT",
+      "VIRTUALUSDT",
+      "WLFIUSDT",
+      "XAGUSDT",
+      "XAUUSDT",
+      "ZBTUSDT"
+    ],
+    "orderSymbolsWithDataCount": 26,
+    "userTradesCount": 14776,
+    "allOrdersCount": 1319,
+    "windowErrorCount": 31
+  },
+  "analysisMode": "full_detail",
+  "perSymbol": {
+    "1000BONKUSDT": {
+      "userTradesCount": 708,
+      "allOrdersCount": 33,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "1000PEPEUSDT": {
+      "userTradesCount": 1000,
+      "allOrdersCount": 36,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "BEATUSDT": {
+      "userTradesCount": 163,
+      "allOrdersCount": 0,
+      "hasTradeData": true,
+      "hasOrderData": false,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "BOMEUSDT": {
+      "userTradesCount": 68,
+      "allOrdersCount": 2,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "BREVUSDT": {
+      "userTradesCount": 576,
+      "allOrdersCount": 30,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "BROCCOLI714USDT": {
+      "userTradesCount": 143,
+      "allOrdersCount": 29,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "BROCCOLIF3BUSDT": {
+      "userTradesCount": 410,
+      "allOrdersCount": 15,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "BTCUSDT": {
+      "userTradesCount": 1851,
+      "allOrdersCount": 248,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "CLOUSDT": {
+      "userTradesCount": 920,
+      "allOrdersCount": 23,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "DOGEUSDT": {
+      "userTradesCount": 23,
+      "allOrdersCount": 5,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "ETHUSDT": {
+      "userTradesCount": 3096,
+      "allOrdersCount": 267,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "HYPEUSDT": {
+      "userTradesCount": 18,
+      "allOrdersCount": 3,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "KAITOUSDT": {
+      "userTradesCount": 192,
+      "allOrdersCount": 11,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "KITEUSDT": {
+      "userTradesCount": 438,
+      "allOrdersCount": 11,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "LIGHTUSDT": {
+      "userTradesCount": 153,
+      "allOrdersCount": 3,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "LITUSDT": {
+      "userTradesCount": 145,
+      "allOrdersCount": 0,
+      "hasTradeData": true,
+      "hasOrderData": false,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "MYXUSDT": {
+      "userTradesCount": 30,
+      "allOrdersCount": 3,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766158697039,
+          "end": 1766763497038,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "PIPPINUSDT": {
+      "userTradesCount": 580,
+      "allOrdersCount": 21,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766164477289,
+          "end": 1766769277288,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "POWERUSDT": {
+      "userTradesCount": 2,
+      "allOrdersCount": 2,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766164477289,
+          "end": 1766769277288,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "RAVEUSDT": {
+      "userTradesCount": 213,
+      "allOrdersCount": 0,
+      "hasTradeData": true,
+      "hasOrderData": false,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766164477289,
+          "end": 1766769277288,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "RIVERUSDT": {
+      "userTradesCount": 762,
+      "allOrdersCount": 50,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766164477289,
+          "end": 1766769277288,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "ROBOUSDT": {
+      "userTradesCount": 64,
+      "allOrdersCount": 4,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766164477289,
+          "end": 1766769277288,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        },
+        {
+          "endpoint": "allOrders",
+          "start": 1772817277289,
+          "end": 1773422077288,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "SOPHUSDT": {
+      "userTradesCount": 169,
+      "allOrdersCount": 4,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766164477289,
+          "end": 1766769277288,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "UNIUSDT": {
+      "userTradesCount": 278,
+      "allOrdersCount": 8,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766164477289,
+          "end": 1766769277288,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "VIRTUALUSDT": {
+      "userTradesCount": 156,
+      "allOrdersCount": 5,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "userTrades",
+          "start": 1766769277289,
+          "end": 1767374077288,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        },
+        {
+          "endpoint": "allOrders",
+          "start": 1766164477289,
+          "end": 1766769277288,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "WLFIUSDT": {
+      "userTradesCount": 81,
+      "allOrdersCount": 3,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766164477289,
+          "end": 1766769277288,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "XAGUSDT": {
+      "userTradesCount": 1215,
+      "allOrdersCount": 329,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766164477289,
+          "end": 1766769277288,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "XAUUSDT": {
+      "userTradesCount": 322,
+      "allOrdersCount": 59,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766164477289,
+          "end": 1766769277288,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    },
+    "ZBTUSDT": {
+      "userTradesCount": 1000,
+      "allOrdersCount": 115,
+      "hasTradeData": true,
+      "hasOrderData": true,
+      "errors": [
+        {
+          "endpoint": "allOrders",
+          "start": 1766164477289,
+          "end": 1766769277288,
+          "count": 0,
+          "ok": false,
+          "error": "HTTP Error 400: Bad Request"
+        }
+      ]
+    }
+  },
+  "windowErrors": [
+    {
+      "symbol": "1000BONKUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "1000PEPEUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "BEATUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "BOMEUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "BREVUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "BROCCOLI714USDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "BROCCOLIF3BUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "CLOUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "HYPEUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "KAITOUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "KITEUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "LIGHTUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "LITUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "MYXUSDT",
+      "endpoint": "allOrders",
+      "start": 1766158697039,
+      "end": 1766763497038,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "PIPPINUSDT",
+      "endpoint": "allOrders",
+      "start": 1766164477289,
+      "end": 1766769277288,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "POWERUSDT",
+      "endpoint": "allOrders",
+      "start": 1766164477289,
+      "end": 1766769277288,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "RAVEUSDT",
+      "endpoint": "allOrders",
+      "start": 1766164477289,
+      "end": 1766769277288,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "RIVERUSDT",
+      "endpoint": "allOrders",
+      "start": 1766164477289,
+      "end": 1766769277288,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "ROBOUSDT",
+      "endpoint": "allOrders",
+      "start": 1766164477289,
+      "end": 1766769277288,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "ROBOUSDT",
+      "endpoint": "allOrders",
+      "start": 1772817277289,
+      "end": 1773422077288,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "SOPHUSDT",
+      "endpoint": "allOrders",
+      "start": 1766164477289,
+      "end": 1766769277288,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "UNIUSDT",
+      "endpoint": "allOrders",
+      "start": 1766164477289,
+      "end": 1766769277288,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "VIRTUALUSDT",
+      "endpoint": "userTrades",
+      "start": 1766769277289,
+      "end": 1767374077288,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "VIRTUALUSDT",
+      "endpoint": "allOrders",
+      "start": 1766164477289,
+      "end": 1766769277288,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "WLFIUSDT",
+      "endpoint": "allOrders",
+      "start": 1766164477289,
+      "end": 1766769277288,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "XAGUSDT",
+      "endpoint": "allOrders",
+      "start": 1766164477289,
+      "end": 1766769277288,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "XAUUSDT",
+      "endpoint": "allOrders",
+      "start": 1766164477289,
+      "end": 1766769277288,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "symbol": "ZBTUSDT",
+      "endpoint": "allOrders",
+      "start": 1766164477289,
+      "end": 1766769277288,
+      "count": 0,
+      "ok": false,
+      "error": "HTTP Error 400: Bad Request"
+    }
+  ]
+}

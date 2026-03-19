@@ -1,0 +1,359 @@
+{
+  "runDir": "C:\\Users\\Administrator\\clawd\\binance-futures-analysis\\skill-runs\\20260319_232231",
+  "lookbackDays": 90,
+  "count": 11593,
+  "symbols": [
+    "1000BONKUSDT",
+    "1000PEPEUSDT",
+    "BEATUSDT",
+    "BOMEUSDT",
+    "BREVUSDT",
+    "BROCCOLI714USDT",
+    "BROCCOLIF3BUSDT",
+    "BTCUSDT",
+    "CLOUSDT",
+    "DOGEUSDT",
+    "ETHUSDT",
+    "HYPEUSDT",
+    "KAITOUSDT",
+    "KITEUSDT",
+    "LIGHTUSDT",
+    "LITUSDT",
+    "MYXUSDT",
+    "PIPPINUSDT",
+    "POWERUSDT",
+    "RAVEUSDT",
+    "RIVERUSDT",
+    "ROBOUSDT",
+    "SOPHUSDT",
+    "UNIUSDT",
+    "VIRTUALUSDT",
+    "WLFIUSDT",
+    "XAGUSDT",
+    "XAUUSDT",
+    "ZBTUSDT"
+  ],
+  "symbolsCount": 29,
+  "incomeTypes": {
+    "REALIZED_PNL": 5159,
+    "COMMISSION": 6028,
+    "FUNDING_FEE": 134,
+    "TRANSFER": 272
+  },
+  "windows": [
+    {
+      "incomeType": "REALIZED_PNL",
+      "start": 1766157751479,
+      "end": 1766762551478,
+      "count": 1000
+    },
+    {
+      "incomeType": "REALIZED_PNL",
+      "start": 1766762551479,
+      "end": 1767367351478,
+      "count": 1000
+    },
+    {
+      "incomeType": "REALIZED_PNL",
+      "start": 1767367351479,
+      "end": 1767972151478,
+      "count": 1000
+    },
+    {
+      "incomeType": "REALIZED_PNL",
+      "start": 1767972151479,
+      "end": 1768576951478,
+      "count": 0
+    },
+    {
+      "incomeType": "REALIZED_PNL",
+      "start": 1768576951479,
+      "end": 1769181751478,
+      "count": 239
+    },
+    {
+      "incomeType": "REALIZED_PNL",
+      "start": 1769181751479,
+      "end": 1769786551478,
+      "count": 692
+    },
+    {
+      "incomeType": "REALIZED_PNL",
+      "start": 1769786551479,
+      "end": 1770391351478,
+      "count": 1000
+    },
+    {
+      "incomeType": "REALIZED_PNL",
+      "start": 1770391351479,
+      "end": 1770996151478,
+      "count": 122
+    },
+    {
+      "incomeType": "REALIZED_PNL",
+      "start": 1770996151479,
+      "end": 1771600951478,
+      "count": 2
+    },
+    {
+      "incomeType": "REALIZED_PNL",
+      "start": 1771600951479,
+      "end": 1772205751478,
+      "count": 32
+    },
+    {
+      "incomeType": "REALIZED_PNL",
+      "start": 1772205751479,
+      "end": 1772810551478,
+      "count": 54
+    },
+    {
+      "incomeType": "REALIZED_PNL",
+      "start": 1772810551479,
+      "end": 1773415351478,
+      "count": 18
+    },
+    {
+      "incomeType": "REALIZED_PNL",
+      "start": 1773415351479,
+      "end": 1773933751479,
+      "count": 0
+    },
+    {
+      "incomeType": "COMMISSION",
+      "start": 1766157751479,
+      "end": 1766762551478,
+      "count": 1000
+    },
+    {
+      "incomeType": "COMMISSION",
+      "start": 1766762551479,
+      "end": 1767367351478,
+      "count": 1000
+    },
+    {
+      "incomeType": "COMMISSION",
+      "start": 1767367351479,
+      "end": 1767972151478,
+      "count": 1000
+    },
+    {
+      "incomeType": "COMMISSION",
+      "start": 1767972151479,
+      "end": 1768576951478,
+      "count": 0
+    },
+    {
+      "incomeType": "COMMISSION",
+      "start": 1768576951479,
+      "end": 1769181751478,
+      "count": 578
+    },
+    {
+      "incomeType": "COMMISSION",
+      "start": 1769181751479,
+      "end": 1769786551478,
+      "count": 1000
+    },
+    {
+      "incomeType": "COMMISSION",
+      "start": 1769786551479,
+      "end": 1770391351478,
+      "count": 1000
+    },
+    {
+      "incomeType": "COMMISSION",
+      "start": 1770391351479,
+      "end": 1770996151478,
+      "count": 153
+    },
+    {
+      "incomeType": "COMMISSION",
+      "start": 1770996151479,
+      "end": 1771600951478,
+      "count": 8
+    },
+    {
+      "incomeType": "COMMISSION",
+      "start": 1771600951479,
+      "end": 1772205751478,
+      "count": 114
+    },
+    {
+      "incomeType": "COMMISSION",
+      "start": 1772205751479,
+      "end": 1772810551478,
+      "count": 156
+    },
+    {
+      "incomeType": "COMMISSION",
+      "start": 1772810551479,
+      "end": 1773415351478,
+      "count": 19
+    },
+    {
+      "incomeType": "COMMISSION",
+      "start": 1773415351479,
+      "end": 1773933751479,
+      "count": 0
+    },
+    {
+      "incomeType": "FUNDING_FEE",
+      "start": 1766157751479,
+      "end": 1766762551478,
+      "count": 58
+    },
+    {
+      "incomeType": "FUNDING_FEE",
+      "start": 1766762551479,
+      "end": 1767367351478,
+      "count": 23
+    },
+    {
+      "incomeType": "FUNDING_FEE",
+      "start": 1767367351479,
+      "end": 1767972151478,
+      "count": 10
+    },
+    {
+      "incomeType": "FUNDING_FEE",
+      "start": 1767972151479,
+      "end": 1768576951478,
+      "count": 0
+    },
+    {
+      "incomeType": "FUNDING_FEE",
+      "start": 1768576951479,
+      "end": 1769181751478,
+      "count": 6
+    },
+    {
+      "incomeType": "FUNDING_FEE",
+      "start": 1769181751479,
+      "end": 1769786551478,
+      "count": 12
+    },
+    {
+      "incomeType": "FUNDING_FEE",
+      "start": 1769786551479,
+      "end": 1770391351478,
+      "count": 12
+    },
+    {
+      "incomeType": "FUNDING_FEE",
+      "start": 1770391351479,
+      "end": 1770996151478,
+      "count": 2
+    },
+    {
+      "incomeType": "FUNDING_FEE",
+      "start": 1770996151479,
+      "end": 1771600951478,
+      "count": 1
+    },
+    {
+      "incomeType": "FUNDING_FEE",
+      "start": 1771600951479,
+      "end": 1772205751478,
+      "count": 6
+    },
+    {
+      "incomeType": "FUNDING_FEE",
+      "start": 1772205751479,
+      "end": 1772810551478,
+      "count": 4
+    },
+    {
+      "incomeType": "FUNDING_FEE",
+      "start": 1772810551479,
+      "end": 1773415351478,
+      "count": 0
+    },
+    {
+      "incomeType": "FUNDING_FEE",
+      "start": 1773415351479,
+      "end": 1773933751479,
+      "count": 0
+    },
+    {
+      "incomeType": "TRANSFER",
+      "start": 1766157751479,
+      "end": 1766762551478,
+      "count": 18
+    },
+    {
+      "incomeType": "TRANSFER",
+      "start": 1766762551479,
+      "end": 1767367351478,
+      "count": 17
+    },
+    {
+      "incomeType": "TRANSFER",
+      "start": 1767367351479,
+      "end": 1767972151478,
+      "count": 12
+    },
+    {
+      "incomeType": "TRANSFER",
+      "start": 1767972151479,
+      "end": 1768576951478,
+      "count": 10
+    },
+    {
+      "incomeType": "TRANSFER",
+      "start": 1768576951479,
+      "end": 1769181751478,
+      "count": 24
+    },
+    {
+      "incomeType": "TRANSFER",
+      "start": 1769181751479,
+      "end": 1769786551478,
+      "count": 35
+    },
+    {
+      "incomeType": "TRANSFER",
+      "start": 1769786551479,
+      "end": 1770391351478,
+      "count": 46
+    },
+    {
+      "incomeType": "TRANSFER",
+      "start": 1770391351479,
+      "end": 1770996151478,
+      "count": 25
+    },
+    {
+      "incomeType": "TRANSFER",
+      "start": 1770996151479,
+      "end": 1771600951478,
+      "count": 21
+    },
+    {
+      "incomeType": "TRANSFER",
+      "start": 1771600951479,
+      "end": 1772205751478,
+      "count": 17
+    },
+    {
+      "incomeType": "TRANSFER",
+      "start": 1772205751479,
+      "end": 1772810551478,
+      "count": 25
+    },
+    {
+      "incomeType": "TRANSFER",
+      "start": 1772810551479,
+      "end": 1773415351478,
+      "count": 12
+    },
+    {
+      "incomeType": "TRANSFER",
+      "start": 1773415351479,
+      "end": 1773933751479,
+      "count": 10
+    }
+  ],
+  "minTimeUtc": "2025-12-19T16:00:00+00:00",
+  "maxTimeUtc": "2026-03-19T04:12:21+00:00"
+}
