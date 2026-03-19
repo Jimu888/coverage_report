@@ -1,0 +1,250 @@
+{
+  "trader_profile": "高频短线试错型交易者",
+  "risk_level": "高",
+  "key_metrics": {
+    "ledger_count": 11593,
+    "trade_symbols_with_data": 29,
+    "order_symbols_with_data": 26,
+    "userTrades_count": 14776,
+    "allOrders_count": 1319,
+    "net_realized_pnl": -230.471318,
+    "net_commission": -3782.359568,
+    "net_funding_fee": -488.496035,
+    "net_after_cost": -4501.326922,
+    "win_rate": 0.1708,
+    "payoff_ratio": 4.7956,
+    "avg_win": 20.815984,
+    "avg_loss": -4.340662,
+    "max_win_streak": 84,
+    "max_loss_streak": 457,
+    "estimated_max_drawdown": -5214.608966,
+    "active_trade_days": 48,
+    "avg_trades_per_active_day": 307.83,
+    "max_trades_one_day": 2252
+  },
+  "main_problems": [
+    "高频交易导致成本失控：90天内成交明细 14776 条，活跃交易日约 48 天，平均每个活跃日 307.83 笔。",
+    "胜率偏低：当前胜率约 17.08%，说明大量入场并没有形成稳定优势。",
+    "手续费侵蚀严重：手续费合计 -3782.36，已经对净收益形成实质性拖累。",
+    "连亏阶段纪律问题明显：最大连续亏损序列达到 457。",
+    "品种扩散偏多：虽然有主战品种，但样本内仍覆盖 29 个品种，容易分散注意力。"
+  ],
+  "strengths": [
+    "盈亏比约 4.80，说明抓对时并不是只能赚小钱。",
+    "已经能识别出明确的主战品种，这使专项优化成为可能。",
+    "90天样本已经足够大，后续做规则约束和训练计划会比较有针对性。"
+  ],
+  "behavior_tags": [
+    "超高频",
+    "低胜率",
+    "盈亏比尚可",
+    "手续费侵蚀明显",
+    "连亏风险高"
+  ],
+  "recommendations": {
+    "behavior": [
+      "把单日成交上限先降到 30 笔，超出即停止新开仓。",
+      "连续亏损 2 次后暂停 4 小时，连续亏损 4 次当天收工。",
+      "每笔开仓前必须写下入场逻辑、止损价、失效条件，写不出来就不做。",
+      "把“临时起意单”单独做标记，周复盘时统计占比。"
+    ],
+    "strategy": [
+      "优先只做过去90天样本最充分、净值表现最清楚的 1-2 个品种。",
+      "把最赚钱和最亏钱的品种分别拆开复盘，不要混在一起看。",
+      "先剔除没有稳定优势的小币高频试错，只保留真正有把握的 setup。",
+      "对于盈利单，采用分批止盈而不是一把梭清仓。"
+    ],
+    "risk_control": [
+      "单笔风险控制在账户权益 0.5%-1%。",
+      "单日亏损达到 2R 立刻停止交易。",
+      "严格禁止亏损单加仓补亏。",
+      "按品种设置风险预算，避免多个高波动币同时开仓。"
+    ]
+  },
+  "weekly_training_plan": {
+    "focus": "降低无效出手，保留高质量交易样本。",
+    "forbidden_actions": [
+      "禁止连亏后立刻翻本单",
+      "禁止没有止损的冲动开仓",
+      "禁止同时交易多个边缘小币",
+      "禁止因为“感觉快动了”就入场"
+    ],
+    "required_actions": [
+      "每天只允许交易 1-2 个主战品种",
+      "每天收盘后复盘全部亏损单",
+      "记录每笔交易的入场逻辑、止损、结果",
+      "统计当天手续费占毛利润比例"
+    ],
+    "checklist": [
+      "这笔交易是否属于过去90天中证明过有效的模式？",
+      "止损是否清楚且单笔风险不超过 1%？",
+      "这笔单是计划内还是临时起意？",
+      "如果再连亏两笔，我是否愿意马上停手？",
+      "这笔交易是否会让今天的总风险暴露过高？"
+    ]
+  },
+  "best_symbols": [
+    {
+      "symbol": "BTCUSDT",
+      "realized_pnl": 3637.4214539099994,
+      "commission": -825.6344618599992,
+      "funding_fee": -28.011491160000002,
+      "net_after_cost": 2783.7755008900003,
+      "realized_events": 738,
+      "trade_count": 1851,
+      "order_count": 248
+    },
+    {
+      "symbol": "ROBOUSDT",
+      "realized_pnl": 404.46608992000006,
+      "commission": -0.21247364,
+      "funding_fee": -0.09825496,
+      "net_after_cost": 404.15536132000005,
+      "realized_events": 14,
+      "trade_count": 64,
+      "order_count": 4
+    },
+    {
+      "symbol": "MYXUSDT",
+      "realized_pnl": 404.93899994,
+      "commission": -1.0900283400000002,
+      "funding_fee": 0.26684791,
+      "net_after_cost": 404.11581951,
+      "realized_events": 12,
+      "trade_count": 30,
+      "order_count": 3
+    },
+    {
+      "symbol": "1000PEPEUSDT",
+      "realized_pnl": 424.6878280900004,
+      "commission": -60.36489792999996,
+      "funding_fee": 1.66204078,
+      "net_after_cost": 365.9849709400004,
+      "realized_events": 369,
+      "trade_count": 1000,
+      "order_count": 36
+    },
+    {
+      "symbol": "BREVUSDT",
+      "realized_pnl": 143.48999991000005,
+      "commission": 0.0,
+      "funding_fee": 1.5069605499999998,
+      "net_after_cost": 144.99696046000005,
+      "realized_events": 21,
+      "trade_count": 576,
+      "order_count": 30
+    },
+    {
+      "symbol": "SOPHUSDT",
+      "realized_pnl": 73.16806987,
+      "commission": -7.187044019999999,
+      "funding_fee": 0.0,
+      "net_after_cost": 65.98102585,
+      "realized_events": 31,
+      "trade_count": 169,
+      "order_count": 4
+    },
+    {
+      "symbol": "BOMEUSDT",
+      "realized_pnl": 62.69893252000001,
+      "commission": 0.0,
+      "funding_fee": 0.0,
+      "net_after_cost": 62.69893252000001,
+      "realized_events": 46,
+      "trade_count": 68,
+      "order_count": 2
+    },
+    {
+      "symbol": "KAITOUSDT",
+      "realized_pnl": 178.97523021000006,
+      "commission": -28.49017396,
+      "funding_fee": -96.03801384,
+      "net_after_cost": 54.447042410000066,
+      "realized_events": 76,
+      "trade_count": 192,
+      "order_count": 11
+    }
+  ],
+  "worst_symbols": [
+    {
+      "symbol": "XAGUSDT",
+      "realized_pnl": -2065.640678539998,
+      "commission": -751.1741214400007,
+      "funding_fee": -3.60207217,
+      "net_after_cost": -2820.416872149999,
+      "realized_events": 550,
+      "trade_count": 1215,
+      "order_count": 329
+    },
+    {
+      "symbol": "ETHUSDT",
+      "realized_pnl": -255.38301598000334,
+      "commission": -1651.284592559991,
+      "funding_fee": 8.066245669999997,
+      "net_after_cost": -1898.6013628699945,
+      "realized_events": 1306,
+      "trade_count": 3096,
+      "order_count": 267
+    },
+    {
+      "symbol": "ZBTUSDT",
+      "realized_pnl": -900.3135686000008,
+      "commission": 0.0,
+      "funding_fee": -38.66588221,
+      "net_after_cost": -938.9794508100008,
+      "realized_events": 340,
+      "trade_count": 1000,
+      "order_count": 115
+    },
+    {
+      "symbol": "1000BONKUSDT",
+      "realized_pnl": -800.9151565500005,
+      "commission": 0.0,
+      "funding_fee": 0.81790973,
+      "net_after_cost": -800.0972468200005,
+      "realized_events": 257,
+      "trade_count": 708,
+      "order_count": 33
+    },
+    {
+      "symbol": "RIVERUSDT",
+      "realized_pnl": -285.2143993399996,
+      "commission": -35.90500057000002,
+      "funding_fee": -191.07750922,
+      "net_after_cost": -512.1969091299997,
+      "realized_events": 207,
+      "trade_count": 762,
+      "order_count": 50
+    },
+    {
+      "symbol": "XAUUSDT",
+      "realized_pnl": -162.00833966,
+      "commission": -331.4831305399998,
+      "funding_fee": -2.8905259499999993,
+      "net_after_cost": -496.3819961499998,
+      "realized_events": 138,
+      "trade_count": 322,
+      "order_count": 59
+    },
+    {
+      "symbol": "UNIUSDT",
+      "realized_pnl": -424.60699931000056,
+      "commission": -19.821433990000006,
+      "funding_fee": -4.0519111500000005,
+      "net_after_cost": -448.4803444500006,
+      "realized_events": 157,
+      "trade_count": 278,
+      "order_count": 8
+    },
+    {
+      "symbol": "KITEUSDT",
+      "realized_pnl": -280.37410896000017,
+      "commission": -24.50038838999999,
+      "funding_fee": -1.10036451,
+      "net_after_cost": -305.9748618600002,
+      "realized_events": 167,
+      "trade_count": 438,
+      "order_count": 11
+    }
+  ]
+}
