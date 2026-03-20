@@ -1,0 +1,64 @@
+{
+  "account_label": "币安小号",
+  "key_metrics": {
+    "ledger_count": 14285,
+    "userTrades_count": 14935,
+    "allOrders_count": 1600,
+    "trade_symbols_with_data": 29,
+    "order_symbols_with_data": 29,
+    "net_realized_pnl": -103.123712,
+    "net_commission": -5411.969406,
+    "net_funding_fee": -119.681617,
+    "net_after_cost": -5634.774735,
+    "win_rate": 0.1946,
+    "payoff_ratio": 4.1213
+  },
+  "best_symbol": {
+    "币安人生USDT": {
+      "count": 501,
+      "win_count": 195,
+      "loss_count": 306,
+      "loss_ratio": 0.6107784431137725,
+      "win_rate": 0.38922155688622756,
+      "net_pnl": 2435.74395042,
+      "fee": -33.14867634,
+      "net_after_cost": 2402.5952740800003,
+      "avg_win": 18.72533478882051,
+      "avg_loss": -3.9728638346405227,
+      "trade_count": 1058,
+      "order_count": 86
+    }
+  },
+  "worst_symbol": {
+    "RIVERUSDT": {
+      "count": 630,
+      "win_count": 9,
+      "loss_count": 621,
+      "loss_ratio": 0.9857142857142858,
+      "win_rate": 0.014285714285714285,
+      "net_pnl": -2346.01499733,
+      "fee": -42.06270973999996,
+      "net_after_cost": -2388.07770707,
+      "avg_win": 18.022988885555556,
+      "avg_loss": -4.039004665539452,
+      "trade_count": 1000,
+      "order_count": 130
+    }
+  },
+  "most_traded_symbol": {
+    "ETHUSDT": {
+      "count": 1238,
+      "win_count": 255,
+      "loss_count": 983,
+      "loss_ratio": 0.7940226171243941,
+      "win_rate": 0.20597738287560582,
+      "net_pnl": -151.77537173999994,
+      "fee": -1875.894124240002,
+      "net_after_cost": -2027.6694959800018,
+      "avg_win": 22.41760364662745,
+      "avg_loss": -5.9697500525228895,
+      "trade_count": 3105,
+      "order_count": 512
+    }
+  }
+}
