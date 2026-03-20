@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>交易阶段总结 · Companion Summary</title>
+  <style>
+    :root {
+      --bg: #f5f2eb;
+      --bg-deep: #efe9df;
+      --paper: rgba(255,255,255,0.72);
+      --paper-strong: rgba(255,255,255,0.88);
+      --ink: #1f1c18;
+      --ink-soft: #5f584f;
+      --ink-faint: #8b8378;
+      --line: rgba(58, 49, 38, 0.12);
+      --line-strong: rgba(58, 49, 38, 0.18);
+      --accent: #7d6957;
+      --accent-soft: rgba(125, 105, 87, 0.12);
+      --accent-strong: #5d4a39;
+      --shadow: 0 24px 60px rgba(90, 72, 51, 0.10);
+      --radius-xl: 30px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(125,105,87,0.06), transparent 26%),
+        linear-gradient(180deg, #f8f5ef 0%, #f3eee5 48%, #efe8dc 100%);
+      font-family: "PingFang SC", "Noto Serif SC", "Source Han Serif SC", "Microsoft YaHei", serif;
+      line-height: 1.85;
+      letter-spacing: 0.01em;
+    }
+
+    .texture {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.06;
+      background-image: radial-gradient(rgba(76,59,40,0.6) 0.5px, transparent 0.5px);
+      background-size: 7px 7px;
+      z-index: 0;
+    }
+
+    .shell {
+      position: relative;
+      z-index: 1;
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 36px 0 80px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 6px 2px 22px;
+      color: var(--ink-faint);
+      font-size: 13px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: var(--accent-strong);
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8e7862, #c8b49b);
+      box-shadow: 0 0 0 6px rgba(125,105,87,0.08);
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.74), rgba(255,255,255,0.58));
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(125,105,87,0.08), transparent 40%, rgba(125,105,87,0.04));
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      padding: 50px 44px 38px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.45);
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0 16px;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+    }
+
+    .hero-copy {
+      max-width: 700px;
+      color: var(--ink-soft);
+      font-size: 17px;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 14px;
+      align-content: end;
+    }
+
+    .soft-card,
+    .section-card,
+    .detail-card,
+    .ask-card {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 30px rgba(90,72,51,0.05);
+      backdrop-filter: blur(8px);
+    }
+
+    .soft-card {
+      padding: 18px 18px 16px;
+    }
+
+    .soft-title {
+      color: var(--ink-faint);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .soft-value {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--ink);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .section-card {
+      padding: 30px 30px 28px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .section-card:hover,
+    .detail-card:hover,
+    .ask-chip:hover,
+    .toggle:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 36px rgba(90,72,51,0.08);
+      border-color: var(--line-strong);
+    }
+
+    .section-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 18px;
+    }
+
+    .section-kicker {
+      color: var(--ink-faint);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    .section-note {
+      margin: 4px 0 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+      max-width: 680px;
+    }
+
+    .section-plain {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 17px;
+    }
+
+    .quote-box {
+      margin-top: 18px;
+      padding: 22px 24px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(125,105,87,0.11), rgba(125,105,87,0.06));
+      border: 1px solid rgba(125,105,87,0.12);
+      color: var(--accent-strong);
+      font-size: 22px;
+      line-height: 1.7;
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .mini-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.52);
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    .mini-card:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.68);
+    }
+
+    .mini-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .mini-text {
+      font-size: 15px;
+      color: var(--ink-soft);
+    }
+
+    .focus-card {
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(125,105,87,0.14), rgba(125,105,87,0.08));
+      border: 1px solid rgba(125,105,87,0.16);
+      margin-top: 18px;
+    }
+
+    .focus-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .focus-title {
+      font-size: 28px;
+      margin: 0 0 10px;
+      line-height: 1.3;
+    }
+
+    .focus-copy {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 16px;
+    }
+
+    .promise-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .promise-item {
+      display: flex;
+      gap: 14px;
+      align-items: start;
+      padding: 16px 16px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.5);
+    }
+
+    .promise-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      flex: 0 0 28px;
+      display: grid;
+      place-items: center;
+      background: rgba(125,105,87,0.12);
+      color: var(--accent-strong);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .promise-text {
+      color: var(--ink-soft);
+      font-size: 16px;
+    }
+
+    .ask-card {
+      padding: 22px 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .ask-title {
+      margin: 0;
+      font-size: 21px;
+    }
+
+    .ask-sub {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+
+    .ask-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .ask-chip,
+    .toggle {
+      cursor: pointer;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.64);
+      color: var(--accent-strong);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 14px;
+      transition: all 0.18s ease;
+    }
+
+    .ask-chip:hover,
+    .toggle:hover {
+      background: rgba(255,255,255,0.88);
+    }
+
+    .details-wrap {
+      margin-top: 14px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .details-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 4px 2px 0;
+    }
+
+    .details-title {
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+
+    .details-grid {
+      display: none;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .details-grid.open { display: grid; }
+
+    .detail-card {
+      padding: 22px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .detail-title {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .detail-text {
+      margin: 0 0 14px;
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+
+    .stats {
+      display: grid;
+      gap: 10px;
+    }
+
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: baseline;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(58,49,38,0.12);
+      font-size: 14px;
+    }
+
+    .stat:first-child { border-top: none; padding-top: 0; }
+    .stat-label { color: var(--ink-faint); }
+    .stat-value { color: var(--ink); font-weight: 600; }
+
+    .footer {
+      padding: 26px 6px 0;
+      color: var(--ink-faint);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 920px) {
+      .hero-inner,
+      .grid-2,
+      .grid-3,
+      .details-grid { grid-template-columns: 1fr; }
+      .hero-inner { padding: 34px 24px 24px; }
+      .section-card { padding: 22px; }
+      .section-top { flex-direction: column; }
+      .quote-box { font-size: 20px; }
+    }
+
+    @media (max-width: 560px) {
+      .shell { width: min(var(--max), calc(100% - 18px)); padding-top: 18px; }
+      .topbar { padding-bottom: 16px; }
+      .quote-box { padding: 18px; }
+      .focus-title { font-size: 24px; }
+      .ask-row { flex-direction: column; }
+      .ask-chip, .toggle { width: 100%; text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <div class="texture"></div>
+
+  <div class="shell">
+    <div class="topbar">
+      <div class="brand"><span class="brand-dot"></span> Trading Companion · 阶段总结</div>
+      <div>阶段区间：近 90 天 · Mock Data Demo</div>
+    </div>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Reflective · Reading First · Companion-like</div>
+          <h1>这不是一份审判书，<br>是一次认真写给你的阶段总结。</h1>
+          <p class="hero-copy">
+            过去这段时间，你不是“完全做错了”，而是有一些真正值得保留的判断，被更频繁、更着急、也更分散的动作冲淡了。
+            这页不会先用一堆图表压你，而是先帮你看清：你现在处在什么阶段、最该先改什么、以及你身上已经有的那部分可持续优势。
+          </p>
+        </div>
+
+        <div class="hero-side">
+          <div class="soft-card">
+            <div class="soft-title">我眼中的你</div>
+            <div class="soft-value">你不是没有判断力，而是太容易一直在线。你抓得到机会，但还没把子弹留给最值得打的地方。</div>
+          </div>
+          <div class="soft-card">
+            <div class="soft-title">本阶段关键词</div>
+            <div class="soft-value">有 edge、易分散、会反应、缺边界、值得继续打磨。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="layout">
+      <section class="section-card">
+        <div class="section-top">
+          <div>
+            <div class="section-kicker">01 · 开场</div>
+            <h2 class="section-title">先别急着给自己下结论。</h2>
+            <p class="section-note">如果你真的完全不会交易，数据不会长成现在这样。真正的问题，不是没有优势，而是优势还不够被保护。</p>
+          </div>
+        </div>
+        <p class="section-plain">
+          这段时间里，你不是抓不到利润，也不是完全没有节奏感。你身上已经有一些真实存在的判断能力、市场感受力和出手直觉。
+          只是这些本来值得放大的部分，经常会被更高频的尝试、连贯不断的参与感、以及“我再看一眼、再做一笔”的状态磨掉。
+        </p>
+        <div class="quote-box">你现在最需要的，不是证明自己能抓到机会，而是证明自己能放过不值得的机会。</div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-top">
+          <div>
+            <div class="section-kicker">02 · 这段时间最值得被看见的事</div>
+            <h2 class="section-title">你已经不是“看不见问题”的阶段了。</h2>
+            <p class="section-note">这很重要。因为真正难的，不是一次亏损，而是亏得毫无可总结性。你现在不是这样。</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="mini-card">
+            <div class="mini-title">你有真实的盈利片段</div>
+            <div class="mini-text">比如 BTCUSDT 在近 90 天里仍然留下了净收益，这说明你不是没有刀，只是还没稳定把刀留给最值得砍的地方。</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-title">你已经能看见自己的结构问题</div>
+            <div class="mini-text">不是单纯问“方向对不对”，而是开始意识到：频率、成本、情绪和连亏续单，正在一起影响结果。</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-top">
+          <div>
+            <div class="section-kicker">03 · 你已经有的优势</div>
+            <h2 class="section-title">有些东西，不该被你最近的失误一笔抹掉。</h2>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="mini-card">
+            <div class="mini-title">对市场是有感觉的</div>
+            <div class="mini-text">你不是麻木型交易者。市场节奏一变，你是能感觉到的，这本身就是稀缺能力。</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-title">不是只会乱按按钮</div>
+            <div class="mini-text">你的交易里有判断、有选择痕迹，不是纯碰运气。这说明可以优化的是结构，不是从零推翻你自己。</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-title">你愿意复盘，也愿意听真话</div>
+            <div class="mini-text">这意味着你不是停在情绪里的人，而是已经走到“能认真打磨自己”的阶段。</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-top">
+          <div>
+            <div class="section-kicker">04 · 如果这周只改一件事</div>
+            <h2 class="section-title">先把“持续在线”改成“有限出手”。</h2>
+            <p class="section-note">这不是让你变怂，是先把最伤净值、也最伤心态的漏损口堵上。</p>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-label">本周只改这一件</div>
+          <h3 class="focus-title">任何一天，只允许自己做 1–2 个主战品种；连续亏损 2 次，硬停。</h3>
+          <p class="focus-copy">
+            你眼下最需要修的，不是市场理解力，而是交易边界。把不必要的参与先降下来，很多心态问题会自己消失一半。
+            真正的成熟，不是每次都想出手，而是知道哪些波动不配你出手。
+          </p>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <div class="section-top">
+          <div>
+            <div class="section-kicker">05 · 下周的三个约定</div>
+            <h2 class="section-title">别立太多 Flag，先只守住这三个边界。</h2>
+          </div>
+        </div>
+        <div class="promise-list">
+          <div class="promise-item">
+            <div class="promise-num">1</div>
+            <div class="promise-text">每笔单开之前，先写一句话：这笔单为什么值得我开枪。</div>
+          </div>
+          <div class="promise-item">
+            <div class="promise-num">2</div>
+            <div class="promise-text">如果今天已经出现 2 次情绪化动作，就结束，不再试图扳回来。</div>
+          </div>
+          <div class="promise-item">
+            <div class="promise-num">3</div>
+            <div class="promise-text">把注意力放在“减少无价值出手”，而不是“增加更多机会”。</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ask-card">
+        <h3 class="ask-title">想继续聊一句吗？</h3>
+        <p class="ask-sub">读完这里，如果你想顺着往下问，我建议从最刺你的那个问题开始。</p>
+        <div class="ask-row" id="askRow"></div>
+      </section>
+
+      <section class="section-card">
+        <div class="details-head">
+          <div class="details-title">第二层 · 展开分析（证据层）</div>
+          <button class="toggle" id="toggleDetails">展开详细分析</button>
+        </div>
+        <div class="details-wrap">
+          <div class="details-grid" id="detailsGrid"></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer">Companion Summary Demo · 阅读优先 / 结果页而非控制台</div>
+  </div>
+
+  <script>
+    const summaryData = {
+      quickQuestions: [
+        '我为什么总在有感觉的时候反而亏？',
+        '哪些交易其实从一开始就不该做？',
+        '我该先砍掉哪个品种或场景？',
+        '为什么我一连亏就容易继续做？'
+      ],
+      detailSections: [
+        {
+          title: '关键数据摘要',
+          text: '先看能代表阶段状态的几组数字，不追求全面，只追求判断方向。这里的重点不是告诉你“亏了多少”，而是告诉你结果是被什么结构推动出来的。',
+          stats: [
+            ['近 90 天净结果', '+ 894.32'],
+            ['交易次数', '1,746'],
+            ['主盈利来源', 'BTCUSDT'],
+            ['主要漏损区', 'ETHUSDT / XAGUSDT']
+          ]
+        },
+        {
+          title: '风险来自哪里',
+          text: '当前最大的风险并不只是方向判断错误，而是“频率 + 连续参与 + 情绪续单”叠加之后，把原本可控的回撤放大了。',
+          stats: [
+            ['高频出手占比', '偏高'],
+            ['连亏后继续出手', '明显'],
+            ['无计划单比例', '需要压低'],
+            ['最优先修复项', '降低无价值交易']
+          ]
+        },
+        {
+          title: '时间与状态分析',
+          text: '你不是每个状态都一样。某些时间段更容易出现“反射式交易”，而在更冷静、目标更清楚的时候，质量明显更高。',
+          stats: [
+            ['稳定时段', '计划性更强'],
+            ['疲劳时段', '更易追单'],
+            ['连亏后状态', '明显变急'],
+            ['建议动作', '把停手机制前置']
+          ]
+        },
+        {
+          title: '持仓过程分析',
+          text: '真正影响结果的，不只是开仓点，而是持仓期间有没有被波动牵着走。你当前更像是“能进场，但守不住过程”。',
+          stats: [
+            ['提前离场', '偏多'],
+            ['被小波动打断', '明显'],
+            ['加仓克制性', '一般'],
+            ['改进方向', '先定义持仓边界']
+          ]
+        },
+        {
+          title: '市场适配分析',
+          text: '不是每个品种都适合你当前的做法。你已经能在部分市场环境里形成优势，但还没把“不适合自己的战场”排除掉。',
+          stats: [
+            ['适配较好', '趋势明确品种'],
+            ['适配较差', '高噪音来回拉扯'],
+            ['误区', '把有感觉当成适配'],
+            ['建议', '收缩主战场']
+          ]
+        },
+        {
+          title: '成本结构分析',
+          text: '成本不是边角料，它会直接吞掉那些本来就不厚的 edge。交易次数越多、试错越碎，成本越像慢性失血。',
+          stats: [
+            ['手续费影响', '持续侵蚀'],
+            ['滑点影响', '中等'],
+            ['高频代价', '非常明显'],
+            ['建议', '用更少笔数换更高质量']
+          ]
+        },
+        {
+          title: '成长变化分析',
+          text: '值得肯定的是，你已经不是“完全看不见自己”的状态。你开始能把问题从“我是不是不行”转成“我到底哪里结构不对”，这就是成长的开始。',
+          stats: [
+            ['问题识别能力', '在提升'],
+            ['自我观察', '更清楚了'],
+            ['下一阶段重点', '边界与筛选'],
+            ['阶段判断', '值得继续打磨']
+          ]
+        }
+      ]
+    };
+
+    const askRow = document.getElementById('askRow');
+    const detailsGrid = document.getElementById('detailsGrid');
+    const toggleDetails = document.getElementById('toggleDetails');
+
+    summaryData.quickQuestions.forEach((q) => {
+      const button = document.createElement('button');
+      button.className = 'ask-chip';
+      button.textContent = q;
+      button.addEventListener('click', () => {
+        button.textContent = '已选中：' + q;
+      });
+      askRow.appendChild(button);
+    });
+
+    summaryData.detailSections.forEach((section) => {
+      const card = document.createElement('article');
+      card.className = 'detail-card soft-card';
+      const statsHtml = section.stats.map(([label, value]) => `
+        <div class="stat">
+          <span class="stat-label">${label}</span>
+          <span class="stat-value">${value}</span>
+        </div>
+      `).join('');
+
+      card.innerHTML = `
+        <h4 class="detail-title">${section.title}</h4>
+        <p class="detail-text">${section.text}</p>
+        <div class="stats">${statsHtml}</div>
+      `;
+      detailsGrid.appendChild(card);
+    });
+
+    let isOpen = false;
+    toggleDetails.addEventListener('click', () => {
+      isOpen = !isOpen;
+      detailsGrid.classList.toggle('open', isOpen);
+      toggleDetails.textContent = isOpen ? '收起详细分析' : '展开详细分析';
+    });
+  </script>
+</body>
+</html>
