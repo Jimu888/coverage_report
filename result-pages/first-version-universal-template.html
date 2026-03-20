@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universal Editorial Report Template</title>
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.58);
+      --line: rgba(255,255,255,0.11);
+      --gold: #d7b171;
+      --panel: rgba(255,255,255,0.05);
+      --shadow: 0 20px 70px rgba(0,0,0,0.45);
+      --max: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "PingFang SC", "Noto Serif SC", "Microsoft YaHei", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(215,177,113,0.10), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(125,142,255,0.10), transparent 24%),
+        linear-gradient(180deg, #090b10 0%, #0d1017 50%, #121722 100%);
+      line-height: 1.9;
+      letter-spacing: 0.015em;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto;
+      padding: 56px 0 80px;
+    }
+
+    .hero, .section, .ending {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      border-radius: 30px;
+      backdrop-filter: blur(16px);
+    }
+
+    .hero {
+      padding: 42px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(215,177,113,0.22);
+      color: #f0d6aa;
+      background: rgba(215,177,113,0.08);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0 16px;
+      font-size: clamp(34px, 6vw, 70px);
+      line-height: 1.08;
+      font-weight: 600;
+    }
+
+    .intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .mini-panel {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.04);
+      padding: 22px;
+    }
+
+    .mini-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .keyline {
+      margin: 0;
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.5;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .metric-value {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .section {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 24px;
+      padding: 26px;
+      margin-bottom: 22px;
+    }
+
+    .section-side {
+      position: sticky;
+      top: 20px;
+      align-self: start;
+    }
+
+    .section-index {
+      color: var(--gold);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 10px;
+    }
+
+    .section-side h2 {
+      margin: 0 0 10px;
+      font-size: 30px;
+      line-height: 1.25;
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .section-main {
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: rgba(255,255,255,0.04);
+      padding: 28px;
+    }
+
+    .section-main p {
+      margin: 0 0 1.1em;
+      font-size: 18px;
+    }
+
+    .quote {
+      margin: 20px 0;
+      padding: 22px 24px;
+      border-left: 3px solid var(--gold);
+      border-radius: 18px;
+      background: linear-gradient(90deg, rgba(215,177,113,0.12), rgba(215,177,113,0.03));
+      color: #fff2db;
+      font-size: 23px;
+      line-height: 1.65;
+    }
+
+    .evidence {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .evidence-card {
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.035);
+    }
+
+    .evidence-card h4 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .evidence-card p {
+      margin: 0;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .ending {
+      padding: 34px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(215,177,113,0.10), rgba(255,255,255,0.04));
+    }
+
+    .ending p {
+      margin: 0 auto;
+      max-width: 860px;
+      font-size: clamp(20px, 3vw, 30px);
+      line-height: 1.75;
+      color: #fff8eb;
+    }
+
+    .signature {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .section, .evidence { grid-template-columns: 1fr; }
+      .section-side { position: static; }
+      .hero, .section, .ending { border-radius: 24px; }
+      .hero { padding: 28px; }
+      .section { padding: 20px; }
+      .section-main { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" id="app"></div>
+
+  <script>
+    const reportData = {
+      eyebrow: 'Editorial Report · Universal Template',
+      title: '你不是完全做错了，\n你只是还没把真正有效的那部分保护起来。',
+      intro: '这是一个通用的第一版风格模板。它不追求把所有报告信息都堆满，而是先抓住主线，再把内容重组为可阅读、可沉浸、有作者感的页面。后续你只需要替换这份 JSON 数据，就能生成类似第一版气质的网页。',
+      coreJudgment: '页面首先应该传达主线和态度，而不是急着把用户拖进数据细节。真正好的结果页，先让人愿意读下去。',
+      metrics: [
+        { label: '报告类型', value: '诊断 / 复盘' },
+        { label: '页面主线', value: '先保护优势' },
+        { label: '章节数量', value: '4–6 段最佳' },
+        { label: '数据角色', value: '证据，不是主角' }
+      ],
+      sections: [
+        {
+          index: '01',
+          title: '先把结论说透',
+          note: '第一章负责定调，不负责讲全。',
+          paragraphs: [
+            '做这种页面时，最忌讳的不是信息不够，而是没有主线。只要主线不清楚，再多设计也只会像一个被美化过的报表。',
+            '第一版之所以成立，是因为它先给了用户一句能抓住整页的判断，然后再把后面的内容都围着这句话展开。'
+          ],
+          quote: '不是先想“页面怎么做”，而是先想“这份内容真正想说什么”。',
+          evidence: [
+            { title: '页面使命', text: '把报告翻译成阅读体验，而不是字段展示。' },
+            { title: '首屏职责', text: '先定气质、态度、主线，再给少量数字锚点。' }
+          ]
+        },
+        {
+          index: '02',
+          title: '章节必须按论点推进',
+          note: '不要照搬“风险分析 / 成本分析 / 行为分析”这种目录。',
+          paragraphs: [
+            '如果章节只是原报告目录的重排，那它依然是报告。第一版真正高级的地方，在于它是按论点推进的。',
+            '这意味着每一章都应该像在说一个观点，而不是展开一个字段。'
+          ],
+          quote: '真正的章节，不是“这一块讲什么字段”，而是“这一块要说服你什么”。',
+          evidence: [
+            { title: '错误示例', text: '风险分析、时间分析、市场适配分析。' },
+            { title: '正确示例', text: '你真正卡住的，不是能力；心态问题，很多时候只是结构问题。' }
+          ]
+        },
+        {
+          index: '03',
+          title: '金句是骨架，不是装饰',
+          note: '没有金句，页面就容易变得平。',
+          paragraphs: [
+            '金句的作用，不只是让页面看起来高级，而是让读者在阅读中有停顿、有抓手、有记忆点。',
+            '每一章最好都能抽出一句“站得住”的话，让它承担转折和强调。'
+          ],
+          quote: '没有被提炼过的内容，只会被展示；被提炼过的内容，才会被记住。',
+          evidence: [
+            { title: '推荐句式', text: '不是 X，而是 Y；真正的问题不是 A，而是 B。' },
+            { title: '使用规则', text: '每章 1 句足够，宁准不多。' }
+          ]
+        },
+        {
+          index: '04',
+          title: '数据永远是证据层',
+          note: '别让数据抢走主叙事。',
+          paragraphs: [
+            '大多数报告页的问题，不是数据多，而是数据抢戏。用户还没被主线接住，就先被拖进细节，阅读体验立刻断掉。',
+            '更好的做法，是让数据只在需要证明某个判断时出现，而且数量极少、位置极准。'
+          ],
+          quote: '结论在前，数据撑腰；不是数据在前，用户自己猜结论。',
+          evidence: [
+            { title: '首屏数据', text: '一般 2–4 个锚点数字就够。' },
+            { title: '章节数据', text: '每章最多 1 组证据，不堆砌。' }
+          ]
+        }
+      ],
+      ending: '第一版风格最厉害的，不是它更像产品页，而是它先做了内容导演，再做了页面设计。',
+      signature: 'Universal First-Version Editorial Template'
+    };
+
+    function createMetric(metric) {
+      return `
+        <div class="metric">
+          <div class="metric-label">${metric.label}</div>
+          <div class="metric-value">${metric.value}</div>
+        </div>
+      `;
+    }
+
+    function createEvidence(evidenceList) {
+      if (!evidenceList || !evidenceList.length) return '';
+      return `
+        <div class="evidence">
+          ${evidenceList.map(item => `
+            <div class="evidence-card">
+              <h4>${item.title}</h4>
+              <p>${item.text}</p>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function createSection(section) {
+      return `
+        <section class="section">
+          <aside class="section-side">
+            <div class="section-index">${section.index}</div>
+            <h2>${section.title}</h2>
+            <div class="section-note">${section.note || ''}</div>
+          </aside>
+          <article class="section-main">
+            ${section.paragraphs.map(p => `<p>${p}</p>`).join('')}
+            ${section.quote ? `<div class="quote">${section.quote}</div>` : ''}
+            ${createEvidence(section.evidence)}
+          </article>
+        </section>
+      `;
+    }
+
+    document.getElementById('app').innerHTML = `
+      <section class="hero">
+        <div class="eyebrow">${reportData.eyebrow}</div>
+        <h1>${reportData.title.replace(/\n/g, '<br>')}</h1>
+        <div class="intro">${reportData.intro}</div>
+        <div class="hero-grid">
+          <div class="mini-panel">
+            <div class="mini-title">核心判断</div>
+            <p class="keyline">${reportData.coreJudgment}</p>
+          </div>
+          <div class="mini-panel">
+            <div class="mini-title">关键锚点</div>
+            <div class="metrics">${reportData.metrics.map(createMetric).join('')}</div>
+          </div>
+        </div>
+      </section>
+
+      ${reportData.sections.map(createSection).join('')}
+
+      <section class="ending">
+        <p>${reportData.ending}</p>
+        <div class="signature">${reportData.signature}</div>
+      </section>
+    `;
+  </script>
+</body>
+</html>
